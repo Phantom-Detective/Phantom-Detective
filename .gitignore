@@ -1,0 +1,129 @@
+# =========================
+# Unity generated folders
+# =========================
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+[Mm]emoryCaptures/
+
+# =========================
+# Asset meta data (KEEP THESE!)
+# =========================
+!/[Aa]ssets/**/*.meta
+!/[Pp]ackages/**/*.json
+!/[Pp]ackages/**/*.xml
+
+# =========================
+# Unity auto-generated
+# =========================
+sysinfo.txt
+*.pidb
+*.suo
+*.user
+*.userprefs
+*.csproj
+*.unityproj
+*.sln
+*.tmp
+*.booproj
+
+# Visual Studio / Rider
+.vs/
+.idea/
+*.csproj.user
+
+# OS generated
+.DS_Store
+Thumbs.db
+
+# =========================
+# Build results
+# =========================
+*.apk
+*.aab
+*.exe
+*.app
+*.dll
+*.pdb
+
+# =========================
+# Unity Addressables / URP / cache
+# =========================
+/[Bb]uildArtifacts/
+/[Tt]ransformArtifacts/
+/[Ll]ibrary/PackageCache/
+
+# =========================
+# Crash reports
+# =========================
+crashlytics-build.properties
+
+
+# =====================================
+# Unity generated folders
+# =====================================
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Mm]emoryCaptures/
+UserSettings/
+
+# =====================================
+# Visual Studio / Rider / IDE
+# =====================================
+.vs/
+.idea/
+*.csproj
+*.sln
+*.slnx
+*.user
+*.userprefs
+*.pidb
+*.booproj
+
+# =====================================
+# OS files
+# =====================================
+.DS_Store
+Thumbs.db
+
+# =====================================
+# Unity auto-generated cache
+# =====================================
+sysinfo.txt
+*.tmp
+*.bak
+
+# =====================================
+# Build outputs
+# =====================================
+*.apk
+*.aab
+*.exe
+*.app
+*.dll
+*.pdb
+
+# =====================================
+# Unity Package Cache (optional safety)
+# =====================================
+/Library/PackageCache/
+
+# =====================================
+# Crash reports
+# =====================================
+crashlytics-build.properties
+
+
+
+LightingData.asset
+/Assets/Abandoned_Asylum/Show_Assets/LightingData.asset
+/Assets/Abandoned_Asylum/Show/LightingData.asset
+GICache/
