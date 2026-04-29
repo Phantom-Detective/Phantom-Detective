@@ -1,0 +1,211 @@
+Fix MouseDrivenDoor Hinges
+Run time: 2026-04-29 11:56:40
+Scenes containing MouseDrivenDoor: 1
+
+Scene: Assets/Abandoned_Asylum/Show.unity
+Doors found: 200
+Fixed doors: 200
+Already valid doors: 0
+Verified valid doors: 200 / 200
+Actions:
+- Fixed: DoorD_V2 (2) -> Asylum/1stFloor/DayRoom/DoorHinge
+- Fixed: DoorD_V2_Frame -> Asylum/1stFloor/DayRoom/DoorHinge/DoorD_V2 (2)/DoorHinge
+- Fixed: DoorD_V2_Left -> Asylum/1stFloor/DayRoom/DoorHinge/DoorD_V2 (2)/DoorHinge
+- Fixed: DoorD_V2_Right -> Asylum/1stFloor/DayRoom/DoorHinge/DoorD_V2 (2)/DoorHinge
+- Fixed: DoorD_V2_Window -> Asylum/1stFloor/DayRoom/DoorHinge/DoorD_V2 (2)/DoorHinge
+- Fixed: DoorD_V2_Window2 -> Asylum/1stFloor/DayRoom/DoorHinge/DoorD_V2 (2)/DoorHinge
+- Fixed: DoorD_V2 (1) -> Asylum/1stFloor/DiningRoom/DoorHinge
+- Fixed: DoorD_V2_Frame -> Asylum/1stFloor/DiningRoom/DoorHinge/DoorD_V2 (1)/DoorHinge
+- Fixed: DoorD_V2_Left -> Asylum/1stFloor/DiningRoom/DoorHinge/DoorD_V2 (1)/DoorHinge
+- Fixed: DoorD_V2_Right -> Asylum/1stFloor/DiningRoom/DoorHinge/DoorD_V2 (1)/DoorHinge
+- Fixed: DoorD_V2_Window -> Asylum/1stFloor/DiningRoom/DoorHinge/DoorD_V2 (1)/DoorHinge
+- Fixed: DoorD_V2_Window2 -> Asylum/1stFloor/DiningRoom/DoorHinge/DoorD_V2 (1)/DoorHinge
+- Fixed: Door_V1 -> Asylum/1stFloor/Gatehouse/DoorHinge
+- Fixed: Door -> Asylum/1stFloor/Gatehouse/DoorHinge/Door_V1/DoorHinge
+- Fixed: Door_Frame -> Asylum/1stFloor/Gatehouse/DoorHinge/Door_V1/DoorHinge
+- Fixed: Door_Frame (1) -> Asylum/1stFloor/GuardRoom/DoorHinge
+- Fixed: Door_V1 (2) -> Asylum/1stFloor/GuardRoom/DoorHinge
+- Fixed: Door -> Asylum/1stFloor/GuardRoom/DoorHinge/Door_V1 (2)/DoorHinge
+- Fixed: Door_Frame -> Asylum/1stFloor/GuardRoom/DoorHinge/Door_V1 (2)/DoorHinge
+- Fixed: MainDoor -> Asylum/1stFloor/HallDownstair/DoorHinge
+- Fixed: Door_V2 (5) -> Asylum/1stFloor/KitchenA/DoorHinge
+- Fixed: Door -> Asylum/1stFloor/KitchenA/DoorHinge/Door_V2 (5)/DoorHinge
+- Fixed: Door_Frame -> Asylum/1stFloor/KitchenA/DoorHinge/Door_V2 (5)/DoorHinge
+- Fixed: Door_V3 (3) -> Asylum/1stFloor/KitchenA/DoorHinge
+- Fixed: Door -> Asylum/1stFloor/KitchenA/DoorHinge/Door_V3 (3)/DoorHinge
+- Fixed: Door_Frame -> Asylum/1stFloor/KitchenA/DoorHinge/Door_V3 (3)/DoorHinge
+- Fixed: Fridge_DoorD -> Asylum/1stFloor/KitchenA/Fridge (1)/DoorHinge
+- Fixed: Fridge_DoorH -> Asylum/1stFloor/KitchenA/Fridge (1)/DoorHinge
+- Fixed: Fridge_DoorD -> Asylum/1stFloor/KitchenA/Fridge (2)/DoorHinge
+- Fixed: Fridge_DoorH -> Asylum/1stFloor/KitchenA/Fridge (2)/DoorHinge
+- Fixed: Cupboard_Door -> Asylum/1stFloor/OfficeA/Cupboard (2)/DoorHinge
+- Fixed: Cupboard_Door_2 -> Asylum/1stFloor/OfficeA/Cupboard (2)/DoorHinge
+- Fixed: Cupboard_Door_3 -> Asylum/1stFloor/OfficeA/Cupboard (2)/DoorHinge
+- Fixed: Cupboard_Door_4 -> Asylum/1stFloor/OfficeA/Cupboard (2)/DoorHinge
+- Fixed: Door_V1 (1) -> Asylum/1stFloor/OfficeA/DoorHinge
+- Fixed: Door -> Asylum/1stFloor/OfficeA/DoorHinge/Door_V1 (1)/DoorHinge
+- Fixed: Door_Frame -> Asylum/1stFloor/OfficeA/DoorHinge/Door_V1 (1)/DoorHinge
+- Fixed: Case_Door_L -> Asylum/1stFloor/Stock/CaseMetallic (1)/DoorHinge
+- Fixed: Case_Door_R -> Asylum/1stFloor/Stock/CaseMetallic (1)/DoorHinge
+- Fixed: Case_Door_L -> Asylum/1stFloor/Stock/CaseMetallic (2)/DoorHinge
+- Fixed: Case_Door_R -> Asylum/1stFloor/Stock/CaseMetallic (2)/DoorHinge
+- Fixed: Case_Door_L -> Asylum/1stFloor/Stock/CaseMetallic (3)/DoorHinge
+- Fixed: Case_Door_R -> Asylum/1stFloor/Stock/CaseMetallic (3)/DoorHinge
+- Fixed: Case_Door_L -> Asylum/1stFloor/Stock/CaseMetallic/DoorHinge
+- Fixed: Case_Door_R -> Asylum/1stFloor/Stock/CaseMetallic/DoorHinge
+- Fixed: Door_V1 (8) -> Asylum/1stFloor/Stock/DoorHinge
+- Fixed: Door -> Asylum/1stFloor/Stock/DoorHinge/Door_V1 (8)/DoorHinge
+- Fixed: Door_Frame -> Asylum/1stFloor/Stock/DoorHinge/Door_V1 (8)/DoorHinge
+- Fixed: ToiletDoor -> Asylum/1stFloor/ToiletsManA/Bathroom_ToiletsWall (4)/DoorHinge
+- Fixed: ToiletDoor (1) -> Asylum/1stFloor/ToiletsManA/Bathroom_ToiletsWall (4)/DoorHinge
+- Fixed: ToiletDoor (2) -> Asylum/1stFloor/ToiletsManA/Bathroom_ToiletsWall (4)/DoorHinge
+- Fixed: Door_V2 (1) -> Asylum/1stFloor/ToiletsManA/DoorHinge
+- Fixed: Door -> Asylum/1stFloor/ToiletsManA/DoorHinge/Door_V2 (1)/DoorHinge
+- Fixed: Door_Frame -> Asylum/1stFloor/ToiletsManA/DoorHinge/Door_V2 (1)/DoorHinge
+- Fixed: MirrorShelf_DoorL -> Asylum/1stFloor/ToiletsManA/MirrorShelf (2)/DoorHinge
+- Fixed: MirrorShelf_DoorR -> Asylum/1stFloor/ToiletsManA/MirrorShelf (2)/DoorHinge
+- Fixed: MirrorShelf_DoorL -> Asylum/1stFloor/ToiletsManA/MirrorShelf (3)/DoorHinge
+- Fixed: MirrorShelf_DoorR -> Asylum/1stFloor/ToiletsManA/MirrorShelf (3)/DoorHinge
+- Fixed: ToiletDoor -> Asylum/1stFloor/ToiletsWomanA/Bathroom_ToiletsWall (3)/DoorHinge
+- Fixed: ToiletDoor (1) -> Asylum/1stFloor/ToiletsWomanA/Bathroom_ToiletsWall (3)/DoorHinge
+- Fixed: ToiletDoor (2) -> Asylum/1stFloor/ToiletsWomanA/Bathroom_ToiletsWall (3)/DoorHinge
+- Fixed: Door_V2 -> Asylum/1stFloor/ToiletsWomanA/DoorHinge
+- Fixed: Door -> Asylum/1stFloor/ToiletsWomanA/DoorHinge/Door_V2/DoorHinge
+- Fixed: Door_Frame -> Asylum/1stFloor/ToiletsWomanA/DoorHinge/Door_V2/DoorHinge
+- Fixed: MirrorShelf_DoorL -> Asylum/1stFloor/ToiletsWomanA/MirrorShelf (1)/DoorHinge
+- Fixed: MirrorShelf_DoorR -> Asylum/1stFloor/ToiletsWomanA/MirrorShelf (1)/DoorHinge
+- Fixed: MirrorShelf_DoorL -> Asylum/1stFloor/ToiletsWomanA/MirrorShelf/DoorHinge
+- Fixed: MirrorShelf_DoorR -> Asylum/1stFloor/ToiletsWomanA/MirrorShelf/DoorHinge
+- Fixed: ToiletDoor -> Asylum/2ndFloor/Bathroom/Bathroom_ToiletsWall/DoorHinge
+- Fixed: ToiletDoor (2) -> Asylum/2ndFloor/Bathroom/Bathroom_ToiletsWall/DoorHinge
+- Fixed: Door_V2 (4) -> Asylum/2ndFloor/Bathroom/DoorHinge
+- Fixed: Door -> Asylum/2ndFloor/Bathroom/DoorHinge/Door_V2 (4)/DoorHinge
+- Fixed: Door_Frame -> Asylum/2ndFloor/Bathroom/DoorHinge/Door_V2 (4)/DoorHinge
+- Fixed: MirrorShelf_DoorL -> Asylum/2ndFloor/Bathroom/MirrorShelf (1)/DoorHinge
+- Fixed: MirrorShelf_DoorR -> Asylum/2ndFloor/Bathroom/MirrorShelf (1)/DoorHinge
+- Fixed: MirrorShelf_DoorL -> Asylum/2ndFloor/Bathroom/MirrorShelf (2)/DoorHinge
+- Fixed: MirrorShelf_DoorR -> Asylum/2ndFloor/Bathroom/MirrorShelf (2)/DoorHinge
+- Fixed: MirrorShelf_DoorL -> Asylum/2ndFloor/Bathroom/MirrorShelf/DoorHinge
+- Fixed: MirrorShelf_DoorR -> Asylum/2ndFloor/Bathroom/MirrorShelf/DoorHinge
+- Fixed: ToiletDoor (1) -> Asylum/2ndFloor/Bathroom/DoorHinge
+- Fixed: DoorD_V2 -> Asylum/2ndFloor/Bedroom/DoorHinge
+- Fixed: DoorD_V2_Frame -> Asylum/2ndFloor/Bedroom/DoorHinge/DoorD_V2/DoorHinge
+- Fixed: DoorD_V2_Left -> Asylum/2ndFloor/Bedroom/DoorHinge/DoorD_V2/DoorHinge
+- Fixed: DoorD_V2_Right -> Asylum/2ndFloor/Bedroom/DoorHinge/DoorD_V2/DoorHinge
+- Fixed: DoorD_V2_Window -> Asylum/2ndFloor/Bedroom/DoorHinge/DoorD_V2/DoorHinge
+- Fixed: DoorD_V2_Window2 -> Asylum/2ndFloor/Bedroom/DoorHinge/DoorD_V2/DoorHinge
+- Fixed: Case_Door_L -> Asylum/2ndFloor/Classroom/CaseMetallic (1)/DoorHinge
+- Fixed: Case_Door_R -> Asylum/2ndFloor/Classroom/CaseMetallic (1)/DoorHinge
+- Fixed: Case_Door_L -> Asylum/2ndFloor/Classroom/CaseMetallic (2)/DoorHinge
+- Fixed: Case_Door_R -> Asylum/2ndFloor/Classroom/CaseMetallic (2)/DoorHinge
+- Fixed: Case_Door_L -> Asylum/2ndFloor/Classroom/CaseMetallic (3)/DoorHinge
+- Fixed: Case_Door_R -> Asylum/2ndFloor/Classroom/CaseMetallic (3)/DoorHinge
+- Fixed: Case_Door_L -> Asylum/2ndFloor/Classroom/CaseMetallic/DoorHinge
+- Fixed: Case_Door_R -> Asylum/2ndFloor/Classroom/CaseMetallic/DoorHinge
+- Fixed: Door_V1 (6) -> Asylum/2ndFloor/Classroom/DoorHinge
+- Fixed: Door -> Asylum/2ndFloor/Classroom/DoorHinge/Door_V1 (6)/DoorHinge
+- Fixed: Door_Frame -> Asylum/2ndFloor/Classroom/DoorHinge/Door_V1 (6)/DoorHinge
+- Fixed: Door_V1 (7) -> Asylum/2ndFloor/ExamRoom/DoorHinge
+- Fixed: Door -> Asylum/2ndFloor/ExamRoom/DoorHinge/Door_V1 (7)/DoorHinge
+- Fixed: Door_Frame -> Asylum/2ndFloor/ExamRoom/DoorHinge/Door_V1 (7)/DoorHinge
+- Fixed: MedRackDoor_L -> Asylum/2ndFloor/ExamRoom/MedRack (1)/DoorHinge
+- Fixed: MedRackDoor_R -> Asylum/2ndFloor/ExamRoom/MedRack (1)/DoorHinge
+- Fixed: MedRackDoor_L -> Asylum/2ndFloor/ExamRoom/MedRack/DoorHinge
+- Fixed: MedRackDoor_R -> Asylum/2ndFloor/ExamRoom/MedRack/DoorHinge
+- Fixed: MirrorShelf_DoorL -> Asylum/2ndFloor/ExamRoom/MirrorShelf (3)/DoorHinge
+- Fixed: MirrorShelf_DoorR -> Asylum/2ndFloor/ExamRoom/MirrorShelf (3)/DoorHinge
+- Fixed: Case_Door_L -> Asylum/2ndFloor/HallUpstair/CaseMetallic (4)/DoorHinge
+- Fixed: Case_Door_R -> Asylum/2ndFloor/HallUpstair/CaseMetallic (4)/DoorHinge
+- Fixed: Case_Door_L -> Asylum/2ndFloor/HallUpstair/CaseMetallic (5)/DoorHinge
+- Fixed: Case_Door_R -> Asylum/2ndFloor/HallUpstair/CaseMetallic (5)/DoorHinge
+- Fixed: Case_Door_L -> Asylum/2ndFloor/HallUpstair/CaseMetallic (6)/DoorHinge
+- Fixed: Case_Door_R -> Asylum/2ndFloor/HallUpstair/CaseMetallic (6)/DoorHinge
+- Fixed: Case_Door_L -> Asylum/2ndFloor/HallUpstair/CaseMetallic (7)/DoorHinge
+- Fixed: Door_V1 (3) -> Asylum/2ndFloor/Kitchen/DoorHinge
+- Fixed: Door -> Asylum/2ndFloor/Kitchen/DoorHinge/Door_V1 (3)/DoorHinge
+- Fixed: Door_Frame -> Asylum/2ndFloor/Kitchen/DoorHinge/Door_V1 (3)/DoorHinge
+- Fixed: Fridge_DoorD -> Asylum/2ndFloor/Kitchen/Fridge/DoorHinge
+- Fixed: Fridge_DoorH -> Asylum/2ndFloor/Kitchen/Fridge/DoorHinge
+- Fixed: Cupboard_Door -> Asylum/2ndFloor/Office/Cupboard (1)/DoorHinge
+- Fixed: Cupboard_Door_2 -> Asylum/2ndFloor/Office/Cupboard (1)/DoorHinge
+- Fixed: Cupboard_Door_3 -> Asylum/2ndFloor/Office/Cupboard (1)/DoorHinge
+- Fixed: Cupboard_Door_4 -> Asylum/2ndFloor/Office/Cupboard (1)/DoorHinge
+- Fixed: Cupboard_Door -> Asylum/2ndFloor/Office/Cupboard/DoorHinge
+- Fixed: Cupboard_Door_2 -> Asylum/2ndFloor/Office/Cupboard/DoorHinge
+- Fixed: Cupboard_Door_3 -> Asylum/2ndFloor/Office/Cupboard/DoorHinge
+- Fixed: Cupboard_Door_4 -> Asylum/2ndFloor/Office/Cupboard/DoorHinge
+- Fixed: Door_V1 (4) -> Asylum/2ndFloor/Office/DoorHinge
+- Fixed: Door -> Asylum/2ndFloor/Office/DoorHinge/Door_V1 (4)/DoorHinge
+- Fixed: Door_Frame -> Asylum/2ndFloor/Office/DoorHinge/Door_V1 (4)/DoorHinge
+- Fixed: DoorD_V1 -> Asylum/2ndFloor/Surgery/DoorHinge
+- Fixed: DoorD_Frame -> Asylum/2ndFloor/Surgery/DoorHinge/DoorD_V1/DoorHinge
+- Fixed: DoorD_Left -> Asylum/2ndFloor/Surgery/DoorHinge/DoorD_V1/DoorHinge
+- Fixed: DoorD_Right -> Asylum/2ndFloor/Surgery/DoorHinge/DoorD_V1/DoorHinge
+- Fixed: MedRackDoor_L -> Asylum/2ndFloor/Surgery/MedRack (1)/DoorHinge
+- Fixed: MedRackDoor_R -> Asylum/2ndFloor/Surgery/MedRack (1)/DoorHinge
+- Fixed: MedRackDoor_L -> Asylum/2ndFloor/Surgery/MedRack/DoorHinge
+- Fixed: MedRackDoor_R -> Asylum/2ndFloor/Surgery/MedRack/DoorHinge
+- Fixed: MedRackDoor_L -> Asylum/2ndFloor/Surgery/MedRack_V2 (1)/DoorHinge
+- Fixed: MedRackDoor_R -> Asylum/2ndFloor/Surgery/MedRack_V2 (1)/DoorHinge
+- Fixed: MedRackDoor_L -> Asylum/2ndFloor/Surgery/MedRack_V2/DoorHinge
+- Fixed: MedRackDoor_R -> Asylum/2ndFloor/Surgery/MedRack_V2/DoorHinge
+- Fixed: ToiletDoor -> Asylum/2ndFloor/ToiletsMan/Bathroom_ToiletsWall (1)/DoorHinge
+- Fixed: ToiletDoor (1) -> Asylum/2ndFloor/ToiletsMan/Bathroom_ToiletsWall (1)/DoorHinge
+- Fixed: ToiletDoor (2) -> Asylum/2ndFloor/ToiletsMan/Bathroom_ToiletsWall (1)/DoorHinge
+- Fixed: Door_V2 (2) -> Asylum/2ndFloor/ToiletsMan/DoorHinge
+- Fixed: Door -> Asylum/2ndFloor/ToiletsMan/DoorHinge/Door_V2 (2)/DoorHinge
+- Fixed: Door_Frame -> Asylum/2ndFloor/ToiletsMan/DoorHinge/Door_V2 (2)/DoorHinge
+- Fixed: MirrorShelf_DoorL -> Asylum/2ndFloor/ToiletsMan/MirrorShelf (6)/DoorHinge
+- Fixed: MirrorShelf_DoorR -> Asylum/2ndFloor/ToiletsMan/MirrorShelf (6)/DoorHinge
+- Fixed: MirrorShelf_DoorL -> Asylum/2ndFloor/ToiletsMan/MirrorShelf (7)/DoorHinge
+- Fixed: MirrorShelf_DoorR -> Asylum/2ndFloor/ToiletsMan/MirrorShelf (7)/DoorHinge
+- Fixed: ToiletDoor -> Asylum/2ndFloor/ToiletsWoman/Bathroom_ToiletsWall (2)/DoorHinge
+- Fixed: ToiletDoor (1) -> Asylum/2ndFloor/ToiletsWoman/Bathroom_ToiletsWall (2)/DoorHinge
+- Fixed: ToiletDoor (2) -> Asylum/2ndFloor/ToiletsWoman/Bathroom_ToiletsWall (2)/DoorHinge
+- Fixed: Door_V2 (3) -> Asylum/2ndFloor/ToiletsWoman/DoorHinge
+- Fixed: Door -> Asylum/2ndFloor/ToiletsWoman/DoorHinge/Door_V2 (3)/DoorHinge
+- Fixed: Door_Frame -> Asylum/2ndFloor/ToiletsWoman/DoorHinge/Door_V2 (3)/DoorHinge
+- Fixed: MirrorShelf_DoorL -> Asylum/2ndFloor/ToiletsWoman/MirrorShelf (4)/DoorHinge
+- Fixed: MirrorShelf_DoorR -> Asylum/2ndFloor/ToiletsWoman/MirrorShelf (4)/DoorHinge
+- Fixed: MirrorShelf_DoorL -> Asylum/2ndFloor/ToiletsWoman/MirrorShelf (5)/DoorHinge
+- Fixed: MirrorShelf_DoorR -> Asylum/2ndFloor/ToiletsWoman/MirrorShelf (5)/DoorHinge
+- Fixed: Door_V1 (5) -> Asylum/Basement/HallUnderground/DoorHinge
+- Fixed: Door -> Asylum/Basement/HallUnderground/DoorHinge/Door_V1 (5)/DoorHinge
+- Fixed: Door_Frame -> Asylum/Basement/HallUnderground/DoorHinge/Door_V1 (5)/DoorHinge
+- Fixed: Case_Door_L -> Asylum/Basement/MachineRoom/CaseMetallic (10)/DoorHinge
+- Fixed: Case_Door_R -> Asylum/Basement/MachineRoom/CaseMetallic (10)/DoorHinge
+- Fixed: Case_Door_L -> Asylum/Basement/MachineRoom/CaseMetallic (8)/DoorHinge
+- Fixed: Case_Door_R -> Asylum/Basement/MachineRoom/CaseMetallic (8)/DoorHinge
+- Fixed: Case_Door_L -> Asylum/Basement/MachineRoom/CaseMetallic (9)/DoorHinge
+- Fixed: Case_Door_R -> Asylum/Basement/MachineRoom/DoorHinge
+- Fixed: Door_V3 (2) -> Asylum/Basement/MachineRoom/DoorHinge
+- Fixed: Door -> Asylum/Basement/MachineRoom/DoorHinge/Door_V3 (2)/DoorHinge
+- Fixed: Door_Frame -> Asylum/Basement/MachineRoom/DoorHinge/Door_V3 (2)/DoorHinge
+- Fixed: DoorD_V1 (1) -> Asylum/Basement/Morgue/DoorHinge
+- Fixed: DoorD_Frame -> Asylum/Basement/Morgue/DoorHinge/DoorD_V1 (1)/DoorHinge
+- Fixed: DoorD_Left -> Asylum/Basement/Morgue/DoorHinge/DoorD_V1 (1)/DoorHinge
+- Fixed: DoorD_Right -> Asylum/Basement/Morgue/DoorHinge/DoorD_V1 (1)/DoorHinge
+- Fixed: DoorD_Right (1) -> Asylum/Basement/Morgue/DoorHinge/DoorD_V1 (1)/DoorHinge
+- Fixed: MedRackDoor_L -> Asylum/Basement/Morgue/MedRack (1)/DoorHinge
+- Fixed: MedRackDoor_R -> Asylum/Basement/Morgue/MedRack (1)/DoorHinge
+- Fixed: MedRackDoor_L -> Asylum/Basement/Morgue/MedRack/DoorHinge
+- Fixed: MedRackDoor_R -> Asylum/Basement/Morgue/MedRack/DoorHinge
+- Fixed: MorgueBox_Door -> Asylum/Basement/Morgue/MorgueBox (1)/DoorHinge
+- Fixed: MorgueBox_Door2 -> Asylum/Basement/Morgue/MorgueBox (1)/DoorHinge
+- Fixed: MorgueBox_Door3 -> Asylum/Basement/Morgue/MorgueBox (1)/DoorHinge
+- Fixed: MorgueBox_Door4 -> Asylum/Basement/Morgue/MorgueBox (1)/DoorHinge
+- Fixed: MorgueBox_Door -> Asylum/Basement/Morgue/MorgueBox (2)/DoorHinge
+- Fixed: MorgueBox_Door2 -> Asylum/Basement/Morgue/MorgueBox (2)/DoorHinge
+- Fixed: MorgueBox_Door3 -> Asylum/Basement/Morgue/MorgueBox (2)/DoorHinge
+- Fixed: MorgueBox_Door4 -> Asylum/Basement/Morgue/MorgueBox (2)/DoorHinge
+- Fixed: MorgueBox_Door -> Asylum/Basement/Morgue/MorgueBox/DoorHinge
+- Fixed: MorgueBox_Door2 -> Asylum/Basement/Morgue/MorgueBox/DoorHinge
+- Fixed: MorgueBox_Door3 -> Asylum/Basement/Morgue/MorgueBox/DoorHinge
+- Fixed: MorgueBox_Door4 -> Asylum/Basement/Morgue/MorgueBox/DoorHinge
+- Fixed: Door_V3 (1) -> Asylum/Basement/SeclusionRoomA/DoorHinge
+- Fixed: Door_Frame -> Asylum/Basement/SeclusionRoomA/DoorHinge/Door_V3 (1)/DoorHinge
+- Fixed: Door_V3 -> Asylum/Basement/SeclusionRoomB/DoorHinge
+- Fixed: Door -> Asylum/Basement/SeclusionRoomB/DoorHinge/Door_V3/DoorHinge
+- Fixed: Elevator_Door -> Asylum/Elevator_Wall/DoorHinge
+- Fixed: Elevator_Door (1) -> Asylum/Elevator_Wall/DoorHinge
+
