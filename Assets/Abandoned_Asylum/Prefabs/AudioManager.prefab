@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5892814863328104022
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4900024697986439283}
+  - component: {fileID: 3489472251122827811}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4900024697986439283
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5892814863328104022}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3489472251122827811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5892814863328104022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2005b52bee30704fa711e8597b78e0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Audio
+  starterSource: {fileID: 0}
+  bgmSource: {fileID: 0}
+  sfxSource: {fileID: 0}
+  starterClip: {fileID: 8300000, guid: 40b6413b1e786ce4d93f4be9ea2fd962, type: 3}
+  bgmClip: {fileID: 8300000, guid: ee71ef817437ad144a10e59565730df1, type: 3}
+  randomClips:
+  - {fileID: 8300000, guid: 48a2d3d7c4f3a5940a6a19c679bd2bca, type: 3}
+  - {fileID: 8300000, guid: 9cef0433ee5cc2f4292d1caa90b3bae7, type: 3}
+  - {fileID: 8300000, guid: 53660d368c79c1b49ba825718948c243, type: 3}
+  - {fileID: 8300000, guid: 48a2d3d7c4f3a5940a6a19c679bd2bca, type: 3}
+  bgmNormalVolume: 0.7
+  bgmDuckedVolume: 0.15
+  duckFadeDuration: 0.6
+  bgmFadeInDuration: 1.2
+  minInterval: 20
+  maxInterval: 40

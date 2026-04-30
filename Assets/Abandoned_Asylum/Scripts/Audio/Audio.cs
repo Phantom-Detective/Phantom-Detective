@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AudioManager : MonoBehaviour
+public class Audio : MonoBehaviour
 {
-    public static AudioManager Instance;
+    public static Audio Instance;
 
     [Header("Audio Sources")]
     public AudioSource starterSource;
