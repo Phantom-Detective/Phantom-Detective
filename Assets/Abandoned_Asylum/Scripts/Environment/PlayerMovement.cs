@@ -15,6 +15,9 @@ public class PlayerMovement : MonoBehaviour
     private float verticalVelocity;
     private float rotationX = 0f;
 
+    private bool _crouchOverride;
+    private float _crouchSpeed;
+
     void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -43,8 +46,8 @@ public class PlayerMovement : MonoBehaviour
         if (keyboard.wKey.isPressed || keyboard.upArrowKey.isPressed) z += 1f;
         if (keyboard.sKey.isPressed || keyboard.downArrowKey.isPressed) z -= 1f;
 
-        bool isRunning = keyboard.leftShiftKey.isPressed;
-        float speed = isRunning ? runSpeed : walkSpeed;
+        bool isRunning = keyboard.leftShiftKey.isPressed && !_crouchOverride;
+        float speed = _crouchOverride ? _crouchSpeed : (isRunning ? runSpeed : walkSpeed);
 
         Vector3 move = transform.right * x + transform.forward * z;
 
@@ -55,6 +58,13 @@ public class PlayerMovement : MonoBehaviour
 
         move.y = verticalVelocity;
         controller.Move(move * speed * Time.deltaTime);
+    }
+
+    /// <summary>Called each frame by PlayerCrouch to apply crouch speed.</summary>
+    public void SetCrouchOverride(bool isCrouching, float speed)
+    {
+        _crouchOverride = isCrouching;
+        _crouchSpeed    = speed;
     }
 
     void HandleMouseLook()
