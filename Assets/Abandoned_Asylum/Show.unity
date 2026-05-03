@@ -396,6 +396,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4202154051558250228, guid: 220e82d0e2ac3f841be895afd1e411ef, type: 3}
+      propertyPath: levelTransitionText
+      value: 
+      objectReference: {fileID: 432758488}
     - target: {fileID: 7476453577174526463, guid: 220e82d0e2ac3f841be895afd1e411ef, type: 3}
       propertyPath: pieces.Array.data[0].piecePrefab
       value: 
@@ -4797,6 +4801,17 @@ Transform:
   - {fileID: 4073197148635728}
   m_Father: {fileID: 4476436451358244}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &432758488 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4579914813326917724, guid: 011a8583b1f65c24b914881a95afc03d, type: 3}
+  m_PrefabInstance: {fileID: 604212788}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1 &433393602
 GameObject:
   m_ObjectHideFlags: 0
