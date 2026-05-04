@@ -31,6 +31,8 @@ public class GhostAI : MonoBehaviour
         startPosition = transform.position;
         startRotation = transform.rotation;
 
+        Debug.Log("ghost start!" + startPosition.x + " , " + startPosition.y + " , " + startPosition.z);
+
         agent = GetComponent<NavMeshAgent>();
         patrol = GetComponent<GhostPatrol>();
         senses = GetComponent<GhostSenses>();
@@ -179,7 +181,9 @@ public class GhostAI : MonoBehaviour
         agent.enabled = false;
         agent.enabled = true;
         EnterPatrol();
-        Debug.Log(gameObject.name + " reset!");
+        Debug.Log(gameObject.name + " reset ghost!");
+
+        Debug.Log("ghost reset!" + startPosition.x + " , " + startPosition.y + " , " + startPosition.z);
     }
 
 }

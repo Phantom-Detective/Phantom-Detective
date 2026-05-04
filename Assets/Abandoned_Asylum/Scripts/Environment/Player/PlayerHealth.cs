@@ -34,7 +34,7 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public int maxLives = 3;
+    public int maxLives = 1;
     public int currentLives;
     private Vector3 respawnPoint;
 
@@ -46,10 +46,15 @@ public class PlayerHealth : MonoBehaviour
     private bool isInvincible = false;
     private bool isGameOver = false;
 
+    [Header("Audio")]
+    public AudioSource loseSound;    // ghost eating
+    public AudioSource winSound;     // ghost dying
+
     void Start()
     {
         currentLives = maxLives;
         respawnPoint = transform.position;
+        Debug.Log("Player start!"+ respawnPoint.x+" , "+ respawnPoint.y+" , "+ respawnPoint.z);
 
         if (gameOverPanel != null)
             gameOverPanel.SetActive(false);
@@ -75,7 +80,7 @@ public class PlayerHealth : MonoBehaviour
 
     void Respawn()
     {
-        transform.position = respawnPoint;
+        //transform.position = respawnPoint;
         isInvincible = true;
         Invoke("EndInvincibility", invincibilityTime);
         Debug.Log("Respawned!");
@@ -91,9 +96,30 @@ public class PlayerHealth : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
+        // Stop all ghosts
+        GhostAI[] ghosts = FindObjectsByType<GhostAI>(FindObjectsSortMode.None);
+        foreach (GhostAI ghost in ghosts)
+            ghost.Disappear();
+
+        // Play lose sound
+        if (loseSound != null)
+            loseSound.Play();
+
         if (gameOverPanel != null)
             gameOverPanel.SetActive(true);
     }
+
+    // Called when all shards collected
+    public void TriggerWin()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+        // Play win sound
+        if (winSound != null)
+            winSound.Play();
+    }
+
     public void RestartGame()
     {
         // Hide game over panel
@@ -104,13 +130,17 @@ public class PlayerHealth : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
-        // Reset player
-        ResetPlayer();
+        // Stop sounds
+        if (loseSound != null) loseSound.Stop();
+        if (winSound != null) winSound.Stop();
 
         // Reset all ghosts
         GhostAI[] ghosts = FindObjectsByType<GhostAI>(FindObjectsSortMode.None);
         foreach (GhostAI ghost in ghosts)
             ghost.ResetGhost();
+
+        // Reset player
+        ResetPlayer();
     }
 
     public void ResetPlayer()
@@ -119,6 +149,6 @@ public class PlayerHealth : MonoBehaviour
         isGameOver = false;
         isInvincible = false;
         transform.position = respawnPoint;
-        Debug.Log("Player reset!");
+        Debug.Log("Player respawn!" + respawnPoint.x + " , " + respawnPoint.y + " , " + respawnPoint.z);
     }
 }
