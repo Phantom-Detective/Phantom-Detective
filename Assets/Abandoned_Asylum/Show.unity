@@ -3054,8 +3054,8 @@ MonoBehaviour:
   detectionRange: 3
   puzzleLayer:
     serializedVersion: 2
-    m_Bits: 0
-  interactionPrompt: {fileID: 0}
+    m_Bits: 128
+  interactionPrompt: {fileID: 604212789}
 --- !u!114 &240012412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6938,6 +6938,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 011a8583b1f65c24b914881a95afc03d, type: 3}
+--- !u!1 &604212789 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7085012935000733614, guid: 011a8583b1f65c24b914881a95afc03d, type: 3}
+  m_PrefabInstance: {fileID: 604212788}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &610893614
 MonoBehaviour:
   m_ObjectHideFlags: 0
