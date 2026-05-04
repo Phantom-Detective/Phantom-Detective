@@ -19,8 +19,11 @@ GameObject:
   - component: {fileID: 6979322357941556920}
   - component: {fileID: 4688806853551837020}
   - component: {fileID: 1368368657078964602}
+  - component: {fileID: 584629964791791132}
+  - component: {fileID: 7940608178043299746}
+  - component: {fileID: 8684851852274376172}
   m_Layer: 3
-  m_Name: NPlayer
+  m_Name: NouranPlayer
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35,8 +38,8 @@ Transform:
   m_GameObject: {fileID: 1348650985391545140}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.80823, y: 0.973, z: -6.83998}
+  m_LocalScale: {x: 0.5, y: 0.7, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5319066782664680655}
@@ -62,8 +65,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93b7daa240a51ed41aa3ac0b5089dcae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
-  maxLives: 3
+  maxLives: 1
   currentLives: 0
+  gameOverPanel: {fileID: 0}
+  invincibilityTime: 2
+  loseSound: {fileID: 0}
 --- !u!114 &2587644208564299010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102,8 +108,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 329fd700b4a453a44b1691880b8670e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  walkSpeed: 4
-  runSpeed: 7
+  walkSpeed: 2.5
+  runSpeed: 6
   gravity: -9.81
   mouseSensitivity: 2
   cameraTransform: {fileID: 5319066782664680655}
@@ -261,6 +267,63 @@ MonoBehaviour:
   m_DefaultActionMap: 
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &584629964791791132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1348650985391545140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edf17275147c7bc45a43a896176f38c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HorrorCrosshair
+  style: 0
+  innerColor: {r: 1, g: 1, b: 1, a: 1}
+  outerColor: {r: 0.9, g: 0, b: 0, a: 0}
+  dotRadius: 10
+  starLength: 28
+  starWidth: 6
+  glowRadius: 22
+  pulse: 1
+  pulseSpeed: 2
+  pulseAmount: 0.12
+--- !u!114 &7940608178043299746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1348650985391545140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d210beea5ee57ca428bda2e2b3cd8713, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerCrouch
+  cameraTransform: {fileID: 0}
+  standHeight: 1.8
+  crouchHeight: 0.6
+  cameraHeightOffset: 0.1
+  crouchSpeed: 2
+  crouchSmoothSpeed: 12
+--- !u!114 &8684851852274376172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1348650985391545140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3216d1f4d54eac24eaf4f7f8a69aabac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerPuzzleInteraction
+  detectionRange: 3
+  puzzleLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  interactionPrompt: {fileID: 0}
 --- !u!1 &6935743864493158455
 GameObject:
   m_ObjectHideFlags: 0

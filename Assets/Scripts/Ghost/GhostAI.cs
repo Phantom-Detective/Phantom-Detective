@@ -17,6 +17,9 @@ public class GhostAI : MonoBehaviour
     private float searchTimer = 0f;
     private Vector3 lastKnownPosition;
 
+    [Header("Audio")]
+    public AudioSource winSound;     // ghost dying
+
     private NavMeshAgent agent;
     private GhostPatrol patrol;
     private GhostSenses senses;
@@ -53,8 +56,15 @@ public class GhostAI : MonoBehaviour
             if (PuzzleInventory.Instance.GetCollectedCount() >=
                 PuzzleInventory.Instance.totalPieces)
             {
-                Disappear();
-                return;
+                if (currentState != GhostState.Disappear)
+                {
+                    Disappear();
+                    Debug.Log("Number of shards collected!");
+                    // Play win sound
+                    if (winSound != null)
+                        AudioSource.PlayClipAtPoint(winSound.clip, transform.position);
+                }
+
             }
         }
 
@@ -175,15 +185,27 @@ public class GhostAI : MonoBehaviour
 
     public void ResetGhost()
     {
+        // Reactivate if was disabled
         gameObject.SetActive(true);
+
+        // Disable agent before teleporting
+        agent.enabled = false;
+        Debug.Log(gameObject.name + " reset to: " + startPosition);
+
+        // Teleport to start
         transform.position = startPosition;
         transform.rotation = startRotation;
-        agent.enabled = false;
-        agent.enabled = true;
-        EnterPatrol();
-        Debug.Log(gameObject.name + " reset ghost!");
 
-        Debug.Log("ghost reset!" + startPosition.x + " , " + startPosition.y + " , " + startPosition.z);
+        // Re-enable agent
+        agent.enabled = true;
+
+        // Reset state
+        currentState = GhostState.Patrol;
+
+        // Start patrol
+        EnterPatrol();
+
+        Debug.Log(gameObject.name + " reset to: " + startPosition);
     }
 
 }

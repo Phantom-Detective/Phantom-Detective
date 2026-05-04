@@ -278,7 +278,7 @@ AnimatorStateTransition:
   m_TransitionDuration: 0.25
   m_TransitionOffset: 0
   m_ExitTime: 0.75
-  m_HasExitTime: 1
+  m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
@@ -1597,19 +1597,19 @@ AnimatorStateMachine:
   - {fileID: -4787234277610244295}
   m_EntryTransitions: []
   m_StateMachineTransitions:
-  - first: {fileID: -5886883469030618179}
+  - first: {fileID: 8062711580408066680}
     second:
-    - {fileID: 8365192845231760274}
-  - first: {fileID: -3595131617810036427}
-    second:
-    - {fileID: -6133989060339455414}
+    - {fileID: -4018844683297458032}
   - first: {fileID: 8889956699730236430}
     second:
     - {fileID: -1819442466286346674}
     - {fileID: -1596121855891911589}
-  - first: {fileID: 8062711580408066680}
+  - first: {fileID: -3595131617810036427}
     second:
-    - {fileID: -4018844683297458032}
+    - {fileID: -6133989060339455414}
+  - first: {fileID: -5886883469030618179}
+    second:
+    - {fileID: 8365192845231760274}
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: 410, y: 1150, z: 0}
   m_EntryPosition: {x: 60, y: 1190, z: 0}

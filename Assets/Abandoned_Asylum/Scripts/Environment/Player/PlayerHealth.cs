@@ -1,35 +1,3 @@
-//using UnityEngine;
-
-//public class PlayerHealth : MonoBehaviour
-//{
-//    public int maxLives = 3;
-//    public int currentLives;
-//    private Vector3 respawnPoint;
-
-//    void Start()
-//    {
-//        currentLives = maxLives;
-//        respawnPoint = transform.position;
-//    }
-
-//    public void TakeDamage()
-//    {
-//        currentLives--;
-//        Debug.Log("Lives left: " + currentLives);
-
-//        if (currentLives <= 0)
-//            Debug.Log("GAME OVER");
-//        else
-//            Respawn();
-//    }
-
-//    void Respawn()
-//    {
-//        transform.position = respawnPoint;
-//        Debug.Log("Respawned!");
-//    }
-//}
-
 using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
@@ -48,7 +16,6 @@ public class PlayerHealth : MonoBehaviour
 
     [Header("Audio")]
     public AudioSource loseSound;    // ghost eating
-    public AudioSource winSound;     // ghost dying
 
     void Start()
     {
@@ -109,17 +76,6 @@ public class PlayerHealth : MonoBehaviour
             gameOverPanel.SetActive(true);
     }
 
-    // Called when all shards collected
-    public void TriggerWin()
-    {
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-
-        // Play win sound
-        if (winSound != null)
-            winSound.Play();
-    }
-
     public void RestartGame()
     {
         // Hide game over panel
@@ -132,10 +88,12 @@ public class PlayerHealth : MonoBehaviour
 
         // Stop sounds
         if (loseSound != null) loseSound.Stop();
-        if (winSound != null) winSound.Stop();
 
         // Reset all ghosts
-        GhostAI[] ghosts = FindObjectsByType<GhostAI>(FindObjectsSortMode.None);
+        GhostAI[] ghosts = FindObjectsByType<GhostAI>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+
+        Debug.Log("Number of ghosts!" + ghosts.Length);
+
         foreach (GhostAI ghost in ghosts)
             ghost.ResetGhost();
 
@@ -148,7 +106,14 @@ public class PlayerHealth : MonoBehaviour
         currentLives = maxLives;
         isGameOver = false;
         isInvincible = false;
+
+        // Disable CharacterController before teleporting
+        CharacterController cc = GetComponent<CharacterController>();
+        if (cc != null) cc.enabled = false;
+
         transform.position = respawnPoint;
-        Debug.Log("Player respawn!" + respawnPoint.x + " , " + respawnPoint.y + " , " + respawnPoint.z);
-    }
+
+        // Re-enable after teleporting
+        if (cc != null) cc.enabled = true;
+     }
 }
