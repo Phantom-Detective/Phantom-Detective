@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 0548a6d37726e7a4abaa7cc4d07bfa6e
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 205748
+  packageName: Stylized Demon creature for horror game
+  packageVersion: 1.0
+  assetPath: Assets/Demon/Animation/Demon_AllActions.controller
+  uploadId: 467916

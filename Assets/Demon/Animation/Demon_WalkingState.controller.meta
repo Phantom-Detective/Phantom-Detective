@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c3bd832b3487bcb4196b07158b2eeeb3
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 205748
+  packageName: Stylized Demon creature for horror game
+  packageVersion: 1.0
+  assetPath: Assets/Demon/Animation/Demon_WalkingState.controller
+  uploadId: 467916

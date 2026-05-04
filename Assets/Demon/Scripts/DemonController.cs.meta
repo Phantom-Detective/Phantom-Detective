@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 5aa6fe26a9879f04fbfd0ecbace7cb2c
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 205748
+  packageName: Stylized Demon creature for horror game
+  packageVersion: 1.0
+  assetPath: Assets/Demon/Scripts/DemonController.cs
+  uploadId: 467916

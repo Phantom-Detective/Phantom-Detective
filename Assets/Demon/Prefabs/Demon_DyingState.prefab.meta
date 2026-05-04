@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: f551f0a78da6a7448a60fb9a9e2d28dc
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 205748
+  packageName: Stylized Demon creature for horror game
+  packageVersion: 1.0
+  assetPath: Assets/Demon/Prefabs/Demon_DyingState.prefab
+  uploadId: 467916

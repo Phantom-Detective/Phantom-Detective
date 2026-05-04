@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b35055513ebf13e4398f035296c310f4
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 205748
+  packageName: Stylized Demon creature for horror game
+  packageVersion: 1.0
+  assetPath: Assets/Demon/Scenes/SampleSceneSettings.lighting
+  uploadId: 467916
