@@ -1,30 +1,36 @@
+
+
+
 using UnityEngine;
 using UnityEngine.AI;
 
 public class GhostAnimatorController : MonoBehaviour
 {
+    [Header("Attack Settings")]
+    public float attackDistance = 1.5f;
+
     private Animator animator;
     private GhostAI ghostAI;
     private NavMeshAgent agent;
+    private Transform player;
     private float currentSpeed = 0f;
-
-    // Prevents attack spamming
-    private float attackCooldown = 0f;
-    public float attackCooldownTime = 1.5f;
 
     void Start()
     {
-        // Animator is on the monster child object
         animator = GetComponentInChildren<Animator>();
         ghostAI = GetComponent<GhostAI>();
         agent = GetComponent<NavMeshAgent>();
 
+        GameObject playerObj = GameObject.FindWithTag("Player");
+        if (playerObj != null)
+            player = playerObj.transform;
+
         if (animator == null)
-            Debug.LogError("No Animator found on Ghost children!");
+            Debug.LogError("No Animator found on " + gameObject.name);
         if (ghostAI == null)
-            Debug.LogError("No GhostAI found on Ghost!");
+            Debug.LogError("No GhostAI found on " + gameObject.name);
         if (agent == null)
-            Debug.LogError("No NavMeshAgent found on Ghost!");
+            Debug.LogError("No NavMeshAgent found on " + gameObject.name);
     }
 
     void Update()
@@ -32,38 +38,35 @@ public class GhostAnimatorController : MonoBehaviour
         if (animator == null || ghostAI == null || agent == null)
             return;
 
-        // Smooth speed to avoid animation snapping
+        // Smooth speed
         float targetSpeed = agent.velocity.magnitude;
         currentSpeed = Mathf.Lerp(currentSpeed, targetSpeed,
                                    Time.deltaTime * 10f);
         animator.SetFloat("Speed", currentSpeed);
 
-        // Chasing or searching = run animation
+        // Chasing or searching = run
         bool isChasing = ghostAI.currentState == GhostAI.GhostState.Chase
                       || ghostAI.currentState == GhostAI.GhostState.Search;
         animator.SetBool("IsChasing", isChasing);
 
-        // Count down attack cooldown
-        if (attackCooldown > 0f)
-            attackCooldown -= Time.deltaTime;
-    }
-
-    // Called by GhostKillZone when ghost touches player
-    public void TriggerAttack()
-    {
-        if (animator != null && attackCooldown <= 0f)
+        // Distance based attack
+        if (player != null)
         {
-            animator.SetTrigger("Attack");
-            attackCooldown = attackCooldownTime;
-            Debug.Log("Ghost attack triggered!");
+            float distance = Vector3.Distance(
+                transform.position, player.position);
+
+            bool isAttacking = distance <= attackDistance
+                             && ghostAI.currentState == GhostAI.GhostState.Chase;
+
+            animator.SetBool("IsAttacking", isAttacking);
         }
     }
 
-    // Add this method to GhostAnimatorController.cs
-    public void ResetAttack()
+    // Draw attack range in Scene view
+    void OnDrawGizmos()
     {
-        attackCooldown = 0f;
-        if (animator != null)
-            animator.ResetTrigger("Attack");
+        // Black circle = attack range
+        Gizmos.color = Color.black;
+        Gizmos.DrawWireSphere(transform.position, attackDistance);
     }
 }

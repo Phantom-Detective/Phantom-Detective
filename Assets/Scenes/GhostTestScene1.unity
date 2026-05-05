@@ -594,6 +594,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 61348225704855648, guid: 84422a9b5c8bd0c47b1d40f6554a3ebf, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1348650985391545140, guid: 84422a9b5c8bd0c47b1d40f6554a3ebf, type: 3}
       propertyPath: m_Name
       value: NPlayer
@@ -1035,6 +1039,10 @@ PrefabInstance:
       propertyPath: levelTransitionText
       value: 
       objectReference: {fileID: 688135248}
+    - target: {fileID: 7476453577174526463, guid: 220e82d0e2ac3f841be895afd1e411ef, type: 3}
+      propertyPath: pieces.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7476453577174526463, guid: 220e82d0e2ac3f841be895afd1e411ef, type: 3}
       propertyPath: pieces.Array.data[0].piecePrefab
       value: 
