@@ -7,7 +7,7 @@ public class AutoZoneGenerator : MonoBehaviour
     public List<GameObject> roomObjects = new List<GameObject>();
 
     [Header("Zone Settings")]
-    public float heightAboveFloor = 100.5f;
+    public float heightAboveFloor = 0.5f;
     public float zoneRadius = 3f;
 
     [ContextMenu("Generate Zones")]

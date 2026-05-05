@@ -18,7 +18,7 @@ public class ZonePieceSpawner : MonoBehaviour
         SpawnAllPieces();
     }
 
-    void SpawnAllPieces()
+    public void SpawnAllPieces()
     {
         foreach (var piece in pieces)
         {
@@ -47,5 +47,20 @@ public class ZonePieceSpawner : MonoBehaviour
         }
 
         Debug.Log("All puzzle pieces spawned!");
+    }
+    public void RespawnPieces()
+    {
+        // Destroy any existing puzzle pieces in the scene
+        GameObject piecesParent = GameObject.Find("PuzzlePieces");
+        if (piecesParent != null)
+        {
+            foreach (Transform child in piecesParent.transform)
+            {
+                Destroy(child.gameObject);
+            }
+        }
+
+        // Spawn fresh ones
+        SpawnAllPieces();
     }
 }
