@@ -173,4 +173,26 @@ public class PuzzleBoard : MonoBehaviour
         // Optional: create a temporary on-screen message
         // This requires a TextMeshPro in your main game canvas
     }
+    public void ResetBoard()
+    {
+        // Close board if it's open
+        if (isOpen)
+            CloseBoard();
+
+        // Destroy all UI pieces that were created on the board
+        foreach (var piece in spawnedPieces)
+        {
+            if (piece != null)
+                Destroy(piece.gameObject);
+        }
+        spawnedPieces.Clear();
+
+        // Hide win panel
+        if (winPanel != null)
+            winPanel.SetActive(false);
+
+        // Make sure main panel is hidden
+        if (puzzleBoardPanel != null)
+            puzzleBoardPanel.SetActive(false);
+    }
 }

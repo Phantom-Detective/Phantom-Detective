@@ -97,6 +97,17 @@ public class PlayerHealth : MonoBehaviour
         foreach (GhostAI ghost in ghosts)
             ghost.ResetGhost();
 
+
+        if (PuzzleInventory.Instance != null)
+            PuzzleInventory.Instance.ResetInventory();
+
+        if (PuzzleBoard.Instance != null)
+            PuzzleBoard.Instance.ResetBoard();
+
+        ZonePieceSpawner spawner = FindFirstObjectByType<ZonePieceSpawner>();
+        if (spawner != null)
+            spawner.RespawnPieces();
+
         // Reset player
         ResetPlayer();
     }

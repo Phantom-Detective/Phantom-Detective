@@ -30,4 +30,11 @@ public class PuzzleInventory : MonoBehaviour
     }
 
     public int GetCollectedCount() => collectedPieces.Count;
+
+    public void ResetInventory()
+    {
+        collectedPieces.Clear();
+        OnPieceCollected?.Invoke(0, totalPieces);
+        Debug.Log("Puzzle inventory reset to 0/" + totalPieces);
+    }
 }
