@@ -180,6 +180,10 @@ PrefabInstance:
       propertyPath: m_Resource
       value: 
       objectReference: {fileID: 8300000, guid: 493e6b95843d96a40a607a970680a41e, type: 3}
+    - target: {fileID: 5399631122191632455, guid: a7887467c80994e43b3a06b05bbd0e5f, type: 3}
+      propertyPath: obstacleMask.m_Bits
+      value: 72
+      objectReference: {fileID: 0}
     - target: {fileID: 6111442826236138312, guid: a7887467c80994e43b3a06b05bbd0e5f, type: 3}
       propertyPath: m_BaseOffset
       value: 0
