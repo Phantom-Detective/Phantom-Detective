@@ -1534,7 +1534,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 32b2e380eff70e44ca9dc470a0abebaf, type: 3}
   - {fileID: 21300000, guid: d2a00294525309246b2ea48e5835e7a6, type: 3}
   - {fileID: 21300000, guid: b31139ea720415a41bd08dbda3920abe, type: 3}
-  displayDuration: 2
+  displayDuration: 1.5
 --- !u!114 &74313020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7341,6 +7341,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1930319273492385230, guid: 011a8583b1f65c24b914881a95afc03d, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.9882353
+      objectReference: {fileID: 0}
+    - target: {fileID: 1930319273492385230, guid: 011a8583b1f65c24b914881a95afc03d, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1930319273492385230, guid: 011a8583b1f65c24b914881a95afc03d, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.75686276
+      objectReference: {fileID: 0}
     - target: {fileID: 7530794669473840752, guid: 011a8583b1f65c24b914881a95afc03d, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -8933,7 +8945,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &713811398
 Transform:
   m_ObjectHideFlags: 0
@@ -11084,7 +11096,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &942942381
 Transform:
   m_ObjectHideFlags: 0
@@ -22465,7 +22477,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1955835403
 Transform:
   m_ObjectHideFlags: 0
