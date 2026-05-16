@@ -160,9 +160,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93b7daa240a51ed41aa3ac0b5089dcae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
-  maxLives: 1
-  currentLives: 0
+  maxLives: 3
+  currentLives: 3
   gameOverPanel: {fileID: 0}
+  healthBarUI: {fileID: 0}
   invincibilityTime: 2
   loseSound: {fileID: 5583669956248917980}
 --- !u!114 &2587644208564299010
