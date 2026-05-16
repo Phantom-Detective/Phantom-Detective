@@ -48,6 +48,7 @@ public class PuzzleBoard : MonoBehaviour
             return;
         }
 
+        gameObject.SetActive(true);
         puzzleBoardPanel.SetActive(true);
         isOpen = true;
 
