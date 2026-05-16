@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.InputSystem;
+using System.Collections;
 
 public class MainMenuController : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class MainMenuController : MonoBehaviour
     public GameObject storyPanel;
     public GameObject pausePanel;
     public GameObject settingsPanel;
-    public GameObject controlsPanel;           // ADD THIS
+    public GameObject controlsPanel;           
 
     [Header("Pause Button")]
     public Button pauseButton;
@@ -39,11 +40,13 @@ public class MainMenuController : MonoBehaviour
     [Header("Main Menu Buttons")]
     public Button startButton;
     public Button storyButton;
-    public Button manualButton;               // ADD THIS
+    public Button manualButton;               
 
     private int currentPage = 0;
     private bool isPaused = false;
     public static bool gameStarted = false;
+    [Header("Mission Text")]
+    public GameObject missionTextPanel;
 
     void Start()
     {
@@ -84,10 +87,35 @@ public class MainMenuController : MonoBehaviour
     //}
     public void OnStartClicked()
     {
-        gameStarted = true;      
+        gameStarted = true;
         mainMenuPanel.SetActive(false);
         player.GetComponent<PlayerMovement>().enabled = true;
         if (pauseButton != null) pauseButton.gameObject.SetActive(true);
+
+        // Show mission text
+        if (missionTextPanel != null)
+            StartCoroutine(ShowMissionText());
+    }
+
+    private IEnumerator ShowMissionText()
+    {
+        CanvasGroup cg = missionTextPanel.GetComponent<CanvasGroup>();
+        missionTextPanel.SetActive(true);
+        cg.alpha = 1f;
+
+        yield return new WaitForSeconds(10f);   // visible for 10 seconds
+
+        // Fade out over 1.5 seconds
+        float fadeDuration = 1.5f;
+        float elapsed = 0f;
+        while (elapsed < fadeDuration)
+        {
+            elapsed += Time.deltaTime;
+            cg.alpha = Mathf.Lerp(1f, 0f, elapsed / fadeDuration);
+            yield return null;
+        }
+
+        missionTextPanel.SetActive(false);
     }
 
     public void OnStoryClicked()
@@ -97,14 +125,14 @@ public class MainMenuController : MonoBehaviour
         UpdateStoryPage();
     }
 
-    // ADD THIS — called by the Manual button in the main menu
+    //  called by the Manual button in the main menu
     public void OnManualClicked()
     {
         mainMenuPanel.SetActive(false);
         if (controlsPanel != null) controlsPanel.SetActive(true);
     }
 
-    // ADD THIS — called by the Back button inside the Controls panel
+    // called by the Back button inside the Controls panel
     public void OnControlsBackClicked()
     {
         if (controlsPanel != null) controlsPanel.SetActive(false);
