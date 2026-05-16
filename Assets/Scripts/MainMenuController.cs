@@ -106,7 +106,7 @@ public class MainMenuController : MonoBehaviour
         yield return new WaitForSeconds(10f);   // visible for 10 seconds
 
         // Fade out over 1.5 seconds
-        float fadeDuration = 1.5f;
+        float fadeDuration = 1f;
         float elapsed = 0f;
         while (elapsed < fadeDuration)
         {

@@ -16,7 +16,7 @@ public class IntroManager : MonoBehaviour
 
     void OnVideoFinished(VideoPlayer vp)
     {
-        SceneManager.LoadScene("Show");
+        SceneManager.LoadScene("GamePlayScene");
     }
 
     void Update()
@@ -24,7 +24,7 @@ public class IntroManager : MonoBehaviour
         if (Keyboard.current != null && Keyboard.current.anyKey.wasPressedThisFrame)
         {
             videoPlayer.Stop();
-            SceneManager.LoadScene("Show");
+            SceneManager.LoadScene("GamePlayScene");
         }
     }
 }

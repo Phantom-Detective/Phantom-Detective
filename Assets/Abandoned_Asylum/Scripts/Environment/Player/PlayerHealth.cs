@@ -20,6 +20,7 @@ public class PlayerHealth : MonoBehaviour
 
     [Header("Audio")]
     public AudioSource loseSound;    // ghost eating
+    public AudioSource painSound;    // pain when hit
 
     [Header("Camera Reset")]
     public Transform playerCamera;
@@ -57,6 +58,9 @@ public class PlayerHealth : MonoBehaviour
 
         currentLives--;
         Debug.Log("Lives left: " + currentLives);
+
+        // Play pain sound
+        if (painSound != null) painSound.Play();
 
         // Update health bar
         if (healthBarUI != null)
