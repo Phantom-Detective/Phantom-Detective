@@ -133,53 +133,10 @@ public class PuzzleBoard : MonoBehaviour
             CloseBoard();
         }
     }
-    public void ContinueToNextLevel()
-    {
-        CloseBoard();
-
-        // Show the "Next Level" message
-        if (LevelManager.Instance != null)
-        {
-            LevelManager.Instance.ShowNextLevelMessage("Next Level In Progress...");
-        }
-
-        // actually load next scene in the future
-        // LevelManager.Instance.LoadNextLevel("Level2");
-    }
-
-    private System.Collections.IEnumerator TransitionToNextLevel()
-    {
-        // Optional: fade out effect
-        yield return new WaitForSeconds(1f);
-
-        // Close the puzzle board
-        CloseBoard();
-
-        // Show "Next Level" message on screen
-        ShowLevelTransitionMessage();
-
-        // Optional: load next scene after delay
-        // Uncomment the line below if you have a Scene 2
-        // yield return new WaitForSeconds(3f);
-        // UnityEngine.SceneManagement.SceneManager.LoadScene("Level2");
-    }
-
-    private void ShowLevelTransitionMessage()
-    {
-        // You can create a simple UI text in your main canvas for this
-        // For now, we'll just log it and you can expand
-        Debug.Log("NEXT LEVEL IN PROGRESS...");
-
-        // Optional: create a temporary on-screen message
-        // This requires a TextMeshPro in your main game canvas
-    }
+    
     public void ResetBoard()
     {
-        // Close board if it's open
-        if (isOpen)
-            CloseBoard();
-
-        // Destroy all UI pieces that were created on the board
+        // Destroy all spawned UI pieces
         foreach (var piece in spawnedPieces)
         {
             if (piece != null)
@@ -187,12 +144,19 @@ public class PuzzleBoard : MonoBehaviour
         }
         spawnedPieces.Clear();
 
-        // Hide win panel
+        // Hide panels
+        if (puzzleBoardPanel != null)
+            puzzleBoardPanel.SetActive(false);
+
         if (winPanel != null)
             winPanel.SetActive(false);
 
-        // Make sure main panel is hidden
-        if (puzzleBoardPanel != null)
-            puzzleBoardPanel.SetActive(false);
+        // Find and hide celebration panel if it exists
+        Transform celebration = transform.Find("CelebrationPanel");
+        if (celebration != null)
+            celebration.gameObject.SetActive(false);
+
+        isOpen = false;
+        Debug.Log("Puzzle board reset");
     }
 }

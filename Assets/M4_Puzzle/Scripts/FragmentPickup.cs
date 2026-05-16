@@ -53,7 +53,7 @@ public class FragmentPickup : MonoBehaviour
     {
         if (isCollected) return;
         isCollected = true;
-
+        StoryRevealManager.Instance?.ShowNextStoryImage();
         PuzzleInventory.Instance.AddPiece(this);
         Destroy(gameObject);
     }

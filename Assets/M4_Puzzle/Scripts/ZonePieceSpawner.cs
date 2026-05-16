@@ -12,21 +12,47 @@ public class ZonePieceSpawner : MonoBehaviour
     }
 
     public List<PieceZone> pieces = new List<PieceZone>();
+    private List<GameObject> spawnedWorldPieces = new List<GameObject>();
 
     void Start()
     {
+        Debug.Log("ZonePieceSpawner Start() called. Pieces count: " + pieces.Count);
         SpawnAllPieces();
     }
 
-    public void SpawnAllPieces()
+    void SpawnAllPieces()
     {
+        Debug.Log("SpawnAllPieces() starting...");
+
+        // Create/find PuzzlePieces parent
+        GameObject parentObj = GameObject.Find("PuzzlePieces");
+        if (parentObj == null)
+        {
+            parentObj = new GameObject("PuzzlePieces");
+            Debug.Log("Created PuzzlePieces parent");
+        }
+
         foreach (var piece in pieces)
         {
-            if (piece.piecePrefab == null) continue;
-            if (piece.possibleZones == null || piece.possibleZones.Count == 0) continue;
+            if (piece.piecePrefab == null)
+            {
+                Debug.LogWarning("Piece prefab is null! Skipping.");
+                continue;
+            }
+            if (piece.possibleZones == null || piece.possibleZones.Count == 0)
+            {
+                Debug.LogWarning("Possible zones empty! Skipping " + piece.piecePrefab.name);
+                continue;
+            }
 
             int randomIndex = Random.Range(0, piece.possibleZones.Count);
             Transform chosenZone = piece.possibleZones[randomIndex];
+
+            if (chosenZone == null)
+            {
+                Debug.LogError("Chosen zone is NULL!");
+                continue;
+            }
 
             Vector2 randomCircle = Random.insideUnitCircle * piece.zoneRadius;
             Vector3 spawnPos = chosenZone.position + new Vector3(randomCircle.x, 0.5f, randomCircle.y);
@@ -35,32 +61,39 @@ public class ZonePieceSpawner : MonoBehaviour
             {
                 spawnPos.y = hit.point.y + 0.1f;
             }
+            else
+            {
+                Debug.LogWarning("Raycast missed floor at " + spawnPos);
+            }
 
             Quaternion randomRot = Quaternion.Euler(0, Random.Range(0f, 360f), 0);
             GameObject spawned = Instantiate(piece.piecePrefab, spawnPos, randomRot);
+            spawnedWorldPieces.Add(spawned);
+            spawned.transform.SetParent(parentObj.transform);
 
-            Transform parent = GameObject.Find("PuzzlePieces")?.transform;
-            if (parent != null)
-                spawned.transform.SetParent(parent);
-            else
-                spawned.transform.SetParent(this.transform);
+            Debug.Log("Spawned: " + spawned.name + " at " + spawnPos);
         }
 
-        Debug.Log("All puzzle pieces spawned!");
+        Debug.Log("SpawnAllPieces() finished. Total spawned: " + spawnedWorldPieces.Count);
     }
+
     public void RespawnPieces()
     {
-        // Destroy any existing puzzle pieces in the scene
-        GameObject piecesParent = GameObject.Find("PuzzlePieces");
-        if (piecesParent != null)
+        Debug.Log("RespawnPieces() called. Old count: " + spawnedWorldPieces.Count);
+
+        // Destroy old pieces
+        foreach (var piece in spawnedWorldPieces)
         {
-            foreach (Transform child in piecesParent.transform)
+            if (piece != null)
             {
-                Destroy(child.gameObject);
+                Debug.Log("Destroying old piece: " + piece.name);
+                Destroy(piece);
             }
         }
+        spawnedWorldPieces.Clear();
 
-        // Spawn fresh ones
+        Debug.Log("Old pieces destroyed. Spawning new ones...");
         SpawnAllPieces();
+        Debug.Log("RespawnPieces() complete!");
     }
 }

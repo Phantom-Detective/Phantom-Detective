@@ -1,4 +1,3 @@
-using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,6 +9,7 @@ public class PlayerPuzzleInteraction : MonoBehaviour
 
     private Camera playerCamera;
     private FragmentPickup currentTarget;
+    private bool tabPromptShown = false;
 
     void Start()
     {
@@ -22,18 +22,7 @@ public class PlayerPuzzleInteraction : MonoBehaviour
     {
         DetectPuzzlePiece();
         HandleInput();
-
-        // Show "Press TAB" prompt when all pieces collected
-        if (PuzzleInventory.Instance.GetCollectedCount() >= 9)
-        {
-            if (interactionPrompt != null)
-            {
-                interactionPrompt.SetActive(true);
-                var tmpText = interactionPrompt.GetComponent<TextMeshProUGUI>();
-                if (tmpText != null)
-                    tmpText.text = "Press TAB to solve puzzle";
-            }
-        }
+        ShowTabPromptIfAllCollected();
     }
 
     void DetectPuzzlePiece()
@@ -46,7 +35,7 @@ public class PlayerPuzzleInteraction : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, detectionRange, puzzleLayer))
         {
-            FragmentPickup fragment = hit.collider.GetComponent<FragmentPickup>();
+            FragmentPickup fragment = hit.collider.GetComponent <FragmentPickup > ();
             if (fragment != null)
                 currentTarget = fragment;
         }
@@ -57,14 +46,49 @@ public class PlayerPuzzleInteraction : MonoBehaviour
         if (currentTarget != null)
         {
             currentTarget.Highlight(true);
-            if (interactionPrompt != null)
-                interactionPrompt.SetActive(true);
+            ShowPrompt("Press E to collect");
         }
         else
         {
-            if (interactionPrompt != null)
+            // Only hide prompt here if NOT showing the TAB prompt
+            if (!tabPromptShown && interactionPrompt != null)
                 interactionPrompt.SetActive(false);
         }
+    }
+
+    void ShowTabPromptIfAllCollected()
+    {
+        if (PuzzleInventory.Instance == null) return;
+
+        if (PuzzleInventory.Instance.GetCollectedCount() >= 9 && !tabPromptShown)
+        {
+            tabPromptShown = true;
+            ShowPrompt("Press TAB to solve puzzle");
+            StartCoroutine(HidePromptAfterSeconds(3f));
+        }
+    }
+
+    private System.Collections.IEnumerator HidePromptAfterSeconds(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+
+        if (interactionPrompt != null)
+        {
+            interactionPrompt.SetActive(false);
+        }
+        // After hiding, we don't need to track it anymore
+        // (player can still press TAB, they just won't see the reminder)
+    }
+
+    void ShowPrompt(string text)
+    {
+        if (interactionPrompt == null) return;
+
+        var tmpText = interactionPrompt.GetComponent<TMPro.TextMeshProUGUI>();
+        if (tmpText != null)
+            tmpText.text = text;
+
+        interactionPrompt.SetActive(true);
     }
 
     void HandleInput()
@@ -76,15 +100,15 @@ public class PlayerPuzzleInteraction : MonoBehaviour
         {
             currentTarget.Collect();
             currentTarget = null;
-            if (interactionPrompt != null)
+            if (interactionPrompt != null && !tabPromptShown)
                 interactionPrompt.SetActive(false);
         }
-        // Open puzzle board when all pieces collected
+
         if (keyboard.tabKey.wasPressedThisFrame)
         {
-            if (PuzzleInventory.Instance.GetCollectedCount() >= 9)
+            if (PuzzleInventory.Instance != null && PuzzleInventory.Instance.GetCollectedCount() >= 9)
             {
-                PuzzleBoard.Instance.OpenBoard();
+                PuzzleBoard.Instance?.OpenBoard();
             }
         }
     }
