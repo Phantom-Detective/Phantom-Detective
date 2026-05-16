@@ -75,7 +75,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 0.3965059, y: 0.57570577, z: 0.35116}
+  m_LocalScale: {x: 0.3, y: 0.4, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5319066782664680655}
@@ -163,8 +163,10 @@ MonoBehaviour:
   maxLives: 3
   currentLives: 3
   gameOverPanel: {fileID: 0}
+  healthBarUI: {fileID: 0}
   invincibilityTime: 2
   loseSound: {fileID: 5583669956248917980}
+  playerCamera: {fileID: 5319066782664680655}
 --- !u!114 &2587644208564299010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -210,6 +212,7 @@ MonoBehaviour:
   jumpHeight: 0.3
   torchLight: {fileID: 1692175007485328171}
   torchIntensity: 2
+  torchTransform: {fileID: 1907863387408419917}
   cameraTransform: {fileID: 5319066782664680655}
 --- !u!23 &2127679806004841276
 MeshRenderer:
@@ -218,7 +221,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1348650985391545140}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -282,7 +285,7 @@ CapsuleCollider:
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!143 &6979322357941556920
 CharacterController:
   m_ObjectHideFlags: 0
@@ -307,7 +310,7 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!54 &4688806853551837020
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -540,7 +543,7 @@ Transform:
   m_GameObject: {fileID: 6032390029981631339}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 2.19, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -797,7 +800,7 @@ Transform:
   m_GameObject: {fileID: 6935743864493158455}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.6, z: 0}
+  m_LocalPosition: {x: 0, y: 2.34, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

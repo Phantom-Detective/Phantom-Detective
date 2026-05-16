@@ -28,6 +28,8 @@ public class GhostAI : MonoBehaviour
     private Vector3 startPosition;
     private Quaternion startRotation;
 
+    private bool isPaused = true; // start paused
+
     void Start()
     {
 
@@ -46,10 +48,14 @@ public class GhostAI : MonoBehaviour
             player = playerObj.transform;
 
         EnterPatrol();
+        PauseGhost();
     }
 
     void Update()
     {
+
+        if (isPaused)  return;
+
         // Check if all shards collected
         if (PuzzleInventory.Instance != null)
         {
@@ -75,6 +81,25 @@ public class GhostAI : MonoBehaviour
             case GhostState.Search: HandleSearch(); break;
             case GhostState.Disappear: HandleDisappear(); break;
         }
+    }
+    public void PauseGhost()
+    {
+        isPaused = true;
+
+        if (agent == null) agent = GetComponent<NavMeshAgent>();
+
+        if (agent != null && agent.isOnNavMesh)
+            agent.isStopped = true;
+    }
+
+    public void ResumeGhost()
+    {
+        isPaused = false;
+
+        if (agent == null) agent = GetComponent<NavMeshAgent>();
+
+        if (agent != null && agent.isOnNavMesh)
+            agent.isStopped = false;
     }
 
     // ─── PATROL ───────────────────────────────────────────
@@ -188,6 +213,11 @@ public class GhostAI : MonoBehaviour
         // Reactivate if was disabled
         gameObject.SetActive(true);
 
+        // Re-fetch components in case they were lost
+        if (agent == null) agent = GetComponent<NavMeshAgent>();
+        if (patrol == null) patrol = GetComponent<GhostPatrol>();
+        if (senses == null) senses = GetComponent<GhostSenses>();
+
         // Disable agent before teleporting
         agent.enabled = false;
         Debug.Log(gameObject.name + " reset to: " + startPosition);
@@ -204,6 +234,7 @@ public class GhostAI : MonoBehaviour
 
         // Start patrol
         EnterPatrol();
+        PauseGhost();
 
         Debug.Log(gameObject.name + " reset to: " + startPosition);
     }

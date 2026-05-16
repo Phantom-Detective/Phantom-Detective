@@ -101,6 +101,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Torch Settings")]
     public Light torchLight;            // assign a Light component here
     public float torchIntensity = 2f;   // brightness when on
+    public Transform torchTransform; // drag Torch GameObject here
 
     public Transform cameraTransform;
 
@@ -208,5 +209,16 @@ public class PlayerMovement : MonoBehaviour
         rotationX -= mouseY;
         rotationX = Mathf.Clamp(rotationX, -80f, 80f);
         cameraTransform.localRotation = Quaternion.Euler(rotationX, 0f, 0f);
+
+        // Torch follows camera up/down
+        if (torchTransform != null)
+            torchTransform.localRotation = Quaternion.Euler(rotationX, 0f, 0f);
+
+    }
+    public void ResetCameraRotation()
+    {
+        rotationX = 0f;
+        if (cameraTransform != null)
+            cameraTransform.localRotation = Quaternion.identity;
     }
 }

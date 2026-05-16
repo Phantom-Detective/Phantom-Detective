@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Unity.VisualScripting;
+using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -20,8 +21,23 @@ public class PlayerHealth : MonoBehaviour
     [Header("Audio")]
     public AudioSource loseSound;    // ghost eating
 
+    [Header("Camera Reset")]
+    public Transform playerCamera;
+
+    private Quaternion startPlayerRotation;
+    private Vector3 startCameraPosition;
+    private Quaternion startCameraRotation;
+
     void Start()
     {
+        startPlayerRotation = transform.rotation;
+
+        if (playerCamera != null)
+        {
+            startCameraPosition = playerCamera.position;
+            startCameraRotation = playerCamera.rotation;
+        }
+
         currentLives = maxLives;
         respawnPoint = transform.position;
         Debug.Log("Player start!" + respawnPoint.x + " , " + respawnPoint.y + " , " + respawnPoint.z);
@@ -93,9 +109,9 @@ public class PlayerHealth : MonoBehaviour
         if (gameOverPanel != null)
             gameOverPanel.SetActive(false);
 
-        // Lock cursor back
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        //// Lock cursor back
+        //Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
 
         // Stop sounds
         if (loseSound != null) loseSound.Stop();
@@ -122,23 +138,50 @@ public class PlayerHealth : MonoBehaviour
         ResetPlayer();
     }
 
+
+    public void RestartGameWihoutPuzzles()
+    {
+        // Reset all ghosts
+        GhostAI[] ghosts = FindObjectsByType<GhostAI>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+
+        Debug.Log("Number of ghosts!" + ghosts.Length);
+
+        foreach (GhostAI ghost in ghosts)
+            ghost.ResetGhost();
+
+        // Reset player
+        ResetPlayer();
+    }
+
     public void ResetPlayer()
     {
         currentLives = maxLives;
         isGameOver = false;
         isInvincible = false;
 
-        // Update health bar
         if (healthBarUI != null)
             healthBarUI.SetLives(currentLives, maxLives);
 
-        // Disable CharacterController before teleporting
         CharacterController cc = GetComponent<CharacterController>();
         if (cc != null) cc.enabled = false;
 
+        // Move player first
         transform.position = respawnPoint;
+        transform.rotation = startPlayerRotation;
 
-        // Re-enable after teleporting
+        // Reset camera AFTER player moves
+        if (playerCamera != null)
+        {
+            playerCamera.localPosition = new Vector3(0, 1.7f, 0);
+            playerCamera.localRotation = Quaternion.identity;
+        }
+
         if (cc != null) cc.enabled = true;
+
+        // Also reset the rotationX in PlayerMovement
+        PlayerMovement pm = GetComponent<PlayerMovement>();
+        if (pm != null)
+            pm.ResetCameraRotation();
     }
+
 }
