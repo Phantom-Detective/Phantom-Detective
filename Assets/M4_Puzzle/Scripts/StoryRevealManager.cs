@@ -61,4 +61,11 @@ public class StoryRevealManager : MonoBehaviour
 
         storyPanel.SetActive(false);
     }
+    public void ResetStory()
+    {
+        currentStoryIndex = 0;
+        if (storyPanel != null)
+            storyPanel.SetActive(false);
+        Debug.Log("Story sequence reset!");
+    }
 }

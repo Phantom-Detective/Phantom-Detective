@@ -34,6 +34,15 @@ public class PuzzleToMenuBridge : MonoBehaviour
         else
             Debug.LogError("✗ PuzzleBoard not found on canvas!");
 
+        // 2.5 Reset story reveal 
+        if (StoryRevealManager.Instance != null)
+        {
+            StoryRevealManager.Instance.ResetStory();
+            Debug.Log("✓ Story reset");
+        }
+        else
+            Debug.LogError("✗ StoryRevealManager.Instance is NULL!");
+
         // 3. Hide puzzle canvas
         if (puzzleBoardCanvas != null)
         {

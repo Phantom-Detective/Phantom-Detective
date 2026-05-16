@@ -134,6 +134,9 @@ public class PlayerHealth : MonoBehaviour
         if (PuzzleBoard.Instance != null)
             PuzzleBoard.Instance.ResetBoard();
 
+        if (StoryRevealManager.Instance != null)
+            StoryRevealManager.Instance.ResetStory();
+
         ZonePieceSpawner spawner = FindFirstObjectByType<ZonePieceSpawner>();
         if (spawner != null)
             spawner.RespawnPieces();
