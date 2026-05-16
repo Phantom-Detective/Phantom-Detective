@@ -14,7 +14,7 @@ public class StoryRevealManager : MonoBehaviour
     public Sprite[] storyImages; // Size 9
 
     [Header("Settings")]
-    public float displayDuration = 2f;
+    public float displayDuration = 1.5f;
 
     private int currentStoryIndex = 0; // Tracks how many pieces collected so far
 
