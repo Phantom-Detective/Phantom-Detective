@@ -2,15 +2,12 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public int maxLives = 3;          // Changed from 1 → 3
+    public int maxLives = 1;
     public int currentLives;
     private Vector3 respawnPoint;
 
     [Header("Game Over UI")]
     public GameObject gameOverPanel;
-
-    [Header("Health Bar UI")]
-    public HealthBarUI healthBarUI;   // Drag your HealthBarUI GameObject here
 
     [Header("Invincibility")]
     public float invincibilityTime = 2f;
@@ -24,14 +21,10 @@ public class PlayerHealth : MonoBehaviour
     {
         currentLives = maxLives;
         respawnPoint = transform.position;
-        Debug.Log("Player start!" + respawnPoint.x + " , " + respawnPoint.y + " , " + respawnPoint.z);
+        Debug.Log("Player start!"+ respawnPoint.x+" , "+ respawnPoint.y+" , "+ respawnPoint.z);
 
         if (gameOverPanel != null)
             gameOverPanel.SetActive(false);
-
-        // Initialize health bar
-        if (healthBarUI != null)
-            healthBarUI.SetLives(currentLives, maxLives);
     }
 
     public void TakeDamage()
@@ -41,10 +34,6 @@ public class PlayerHealth : MonoBehaviour
 
         currentLives--;
         Debug.Log("Lives left: " + currentLives);
-
-        // Update health bar
-        if (healthBarUI != null)
-            healthBarUI.SetLives(currentLives, maxLives);
 
         if (currentLives <= 0)
         {
@@ -108,6 +97,7 @@ public class PlayerHealth : MonoBehaviour
         foreach (GhostAI ghost in ghosts)
             ghost.ResetGhost();
 
+
         if (PuzzleInventory.Instance != null)
             PuzzleInventory.Instance.ResetInventory();
 
@@ -128,10 +118,6 @@ public class PlayerHealth : MonoBehaviour
         isGameOver = false;
         isInvincible = false;
 
-        // Update health bar
-        if (healthBarUI != null)
-            healthBarUI.SetLives(currentLives, maxLives);
-
         // Disable CharacterController before teleporting
         CharacterController cc = GetComponent<CharacterController>();
         if (cc != null) cc.enabled = false;
@@ -140,5 +126,5 @@ public class PlayerHealth : MonoBehaviour
 
         // Re-enable after teleporting
         if (cc != null) cc.enabled = true;
-    }
+     }
 }
