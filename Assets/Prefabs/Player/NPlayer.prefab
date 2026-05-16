@@ -163,7 +163,6 @@ MonoBehaviour:
   maxLives: 3
   currentLives: 3
   gameOverPanel: {fileID: 0}
-  healthBarUI: {fileID: 0}
   invincibilityTime: 2
   loseSound: {fileID: 5583669956248917980}
 --- !u!114 &2587644208564299010
