@@ -74,17 +74,22 @@ public class MainMenuController : MonoBehaviour
         ShowMainMenu();
     }
 
-    //void Update()
-    //{
-    //    if (mainMenuPanel.activeSelf || storyPanel.activeSelf) return;
+    void Update()
+    {
+        // Only listen for Escape when game is started
+        // and not in main menu or story panel
+        if (!gameStarted) return;
+        if (mainMenuPanel.activeSelf || storyPanel.activeSelf) return;
 
-    //    // FIX: Use new Input System instead of old Input class
-    //    if (Keyboard.current != null && Keyboard.current.escapeKey.wasPressedThisFrame)
-    //    {
-    //        if (isPaused) OnContinueClicked();
-    //        else PauseGame();
-    //    }
-    //}
+        if (Keyboard.current != null &&
+            Keyboard.current.escapeKey.wasPressedThisFrame)
+        {
+            if (isPaused)
+                OnContinueClicked();
+            else
+                OnPauseButtonClicked();
+        }
+    }
     public void OnStartClicked()
     {
         gameStarted = true;
