@@ -82,7 +82,7 @@ public class MainMenuController : MonoBehaviour
         if (mainMenuPanel.activeSelf || storyPanel.activeSelf) return;
 
         if (Keyboard.current != null &&
-            Keyboard.current.escapeKey.wasPressedThisFrame)
+            Keyboard.current.pKey.wasPressedThisFrame)
         {
             if (isPaused)
                 OnContinueClicked();
