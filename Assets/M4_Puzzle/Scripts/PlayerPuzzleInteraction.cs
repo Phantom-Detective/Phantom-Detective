@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class PlayerPuzzleInteraction : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class PlayerPuzzleInteraction : MonoBehaviour
 
     private Camera playerCamera;
     private FragmentPickup currentTarget;
-    private bool tabPromptShown = false;
+    private bool hasShownTabPrompt = false;   
 
     void Start()
     {
@@ -35,7 +36,7 @@ public class PlayerPuzzleInteraction : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, detectionRange, puzzleLayer))
         {
-            FragmentPickup fragment = hit.collider.GetComponent <FragmentPickup > ();
+            FragmentPickup fragment = hit.collider.GetComponent <FragmentPickup> ();
             if (fragment != null)
                 currentTarget = fragment;
         }
@@ -50,45 +51,17 @@ public class PlayerPuzzleInteraction : MonoBehaviour
         }
         else
         {
-            // Only hide prompt here if NOT showing the TAB prompt
-            if (!tabPromptShown && interactionPrompt != null)
-                interactionPrompt.SetActive(false);
+            // Hide prompt when not looking at anything
+            // (Don't hide if it's the TAB prompt — let the coroutine handle that)
+            if (interactionPrompt != null && interactionPrompt.activeSelf)
+            {
+                var tmp = interactionPrompt.GetComponent<TextMeshProUGUI>();
+                if (tmp != null && tmp.text == "Press E to collect")
+                {
+                    interactionPrompt.SetActive(false);
+                }
+            }
         }
-    }
-
-    void ShowTabPromptIfAllCollected()
-    {
-        if (PuzzleInventory.Instance == null) return;
-
-        if (PuzzleInventory.Instance.GetCollectedCount() >= 9 && !tabPromptShown)
-        {
-            tabPromptShown = true;
-            ShowPrompt("Press TAB to solve puzzle");
-            StartCoroutine(HidePromptAfterSeconds(3f));
-        }
-    }
-
-    private System.Collections.IEnumerator HidePromptAfterSeconds(float seconds)
-    {
-        yield return new WaitForSeconds(seconds);
-
-        if (interactionPrompt != null)
-        {
-            interactionPrompt.SetActive(false);
-        }
-        // After hiding, we don't need to track it anymore
-        // (player can still press TAB, they just won't see the reminder)
-    }
-
-    void ShowPrompt(string text)
-    {
-        if (interactionPrompt == null) return;
-
-        var tmpText = interactionPrompt.GetComponent<TMPro.TextMeshProUGUI>();
-        if (tmpText != null)
-            tmpText.text = text;
-
-        interactionPrompt.SetActive(true);
     }
 
     void HandleInput()
@@ -100,7 +73,7 @@ public class PlayerPuzzleInteraction : MonoBehaviour
         {
             currentTarget.Collect();
             currentTarget = null;
-            if (interactionPrompt != null && !tabPromptShown)
+            if (interactionPrompt != null)
                 interactionPrompt.SetActive(false);
         }
 
@@ -111,5 +84,44 @@ public class PlayerPuzzleInteraction : MonoBehaviour
                 PuzzleBoard.Instance?.OpenBoard();
             }
         }
+    }
+
+    void ShowTabPromptIfAllCollected()
+    {
+        if (PuzzleInventory.Instance == null) return;
+        if (interactionPrompt == null) return;
+
+        int count = PuzzleInventory.Instance.GetCollectedCount();
+
+        // RESET flag when inventory is cleared (game restarted)
+        if (count < 9)
+        {
+            hasShownTabPrompt = false;
+            return;
+        }
+
+        // Show tab prompt ONCE when reaching 9
+        if (count >= 9 && !hasShownTabPrompt)
+        {
+            hasShownTabPrompt = true;
+            ShowPrompt("Press TAB to solve puzzle");
+            StartCoroutine(HidePromptAfterSeconds(5f));
+        }
+    }
+
+    private System.Collections.IEnumerator HidePromptAfterSeconds(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        if (interactionPrompt != null)
+            interactionPrompt.SetActive(false);
+    }
+
+    void ShowPrompt(string text)
+    {
+        if (interactionPrompt == null) return;
+        var tmpText = interactionPrompt.GetComponent<TextMeshProUGUI>();
+        if (tmpText != null)
+            tmpText.text = text;
+        interactionPrompt.SetActive(true);
     }
 }
