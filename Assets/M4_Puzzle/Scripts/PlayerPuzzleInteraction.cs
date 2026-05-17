@@ -52,7 +52,7 @@ public class PlayerPuzzleInteraction : MonoBehaviour
         else
         {
             // Hide prompt when not looking at anything
-            // (Don't hide if it's the TAB prompt — let the coroutine handle that)
+            // (Don't hide if it's the TAB prompt â€” let the coroutine handle that)
             if (interactionPrompt != null && interactionPrompt.activeSelf)
             {
                 var tmp = interactionPrompt.GetComponent<TextMeshProUGUI>();
@@ -105,7 +105,7 @@ public class PlayerPuzzleInteraction : MonoBehaviour
         {
             hasShownTabPrompt = true;
             ShowPrompt("Press TAB to solve puzzle");
-            StartCoroutine(HidePromptAfterSeconds(5f));
+            StartCoroutine(HidePromptAfterSeconds(2f));
         }
     }
 
