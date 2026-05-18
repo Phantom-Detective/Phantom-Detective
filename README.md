@@ -8,7 +8,17 @@ A first-person horror survival puzzle game built in Unity. Explore an abandoned 
 
 ## 🎬 Gameplay Video
 
-▶️ **[Watch Gameplay](https://your-video-link-here.com)**
+▶️ **[Watch Gameplay](https://drive.google.com/file/d/18koYJnCOlZNHaI3ApNutlFOlPxDCITli/view?usp=sharing)**
+
+---
+
+## 🎮 Play The Game
+
+1. Download from Google Drive → [[link](https://drive.google.com/file/d/1uD2oaR2siFNIjGtzOMuZLyATpAO5-qF_/view?usp=drive_link)]
+2. Extract the ZIP file
+3. Open the folder
+4. Double-click PhantomDetective.exe
+5. Enjoy!
 
 ---
 
