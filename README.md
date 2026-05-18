@@ -8,7 +8,7 @@ A first-person horror survival puzzle game built in Unity. Explore an abandoned 
 
 ## 🎬 Gameplay Video
 
-▶️ **[Watch Gameplay on YouTube](https://your-video-link-here.com)**
+▶️ **[Watch Gameplay](https://your-video-link-here.com)**
 
 ---
 
@@ -138,32 +138,6 @@ If any packages are missing, install via Window → Package Manager:
 
 ---
 
-## 📁 Project Structure
-
-```
-Assets/
-├── Abandoned_Asylum/     ← mansion environment
-├── Audio/                ← all sound files
-├── M4_Puzzle/            ← puzzle system
-├── MonsterMutant 7/      ← ghost character 1
-├── Demon/                ← ghost character 2
-├── Snake3D/              ← ghost character 3
-├── Prefabs/
-│   ├── Ghosts/           ← ghost prefabs
-│   ├── Player/           ← player prefab
-│   ├── HidingSpots/      ← hiding spot prefabs
-│   └── Waypoints/        ← patrol waypoints
-├── Scripts/
-│   ├── Ghost/            ← all ghost AI scripts
-│   ├── Player/           ← player scripts
-│   └── Managers/         ← game management
-└── Scenes/
-    ├── StarterScene      ← intro / launch here
-    └── GamePlayScene     ← main game
-```
-
----
-
 ## 🧠 Ghost AI System
 
 The ghost AI is built on a **State Machine** with 4 states:
@@ -186,19 +160,6 @@ Detection uses:
 - **Obstacle mask** (walls and doors block detection)
 
 ---
-
-## 👥 Team
-
-| Name | ID |
-|---|---|
-| زيد هاني محمد صالح الدين | 2022170175 |
-| نيره احمد شفيق مصطفى | 2022170477 |
-| أمنية صالح محمود حامد | 2022170074 |
-| سما خالد ابراهيم محمد | 2022170191 |
-| نوران هيثم عثمان عثمان | 2022170473 |
-
----
-
 ## 📄 Documentation
 
 Full game design document available in the `/Documment` folder of this repository.
