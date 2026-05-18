@@ -137,29 +137,6 @@ If any packages are missing, install via Window → Package Manager:
 > ⚠️ **Important:** Always open `StarterScene` first. Do NOT open `GamePlayScene` directly — the game requires the intro sequence to initialize properly.
 
 ---
-
-## 🧠 Ghost AI System
-
-The ghost AI is built on a **State Machine** with 4 states:
-
-```
-PATROL  →  (detects player)  →  CHASE
-                                   ↓
-                              (loses player)
-                                   ↓
-                              SEARCH  →  (timeout)  →  PATROL
-                                   ↓
-                         (all shards collected)
-                                   ↓
-                              DISAPPEAR
-```
-
-Detection uses:
-- **Sight cone** (field of view + raycast through walls)
-- **Hearing** (based on player noise level — walking vs running)
-- **Obstacle mask** (walls and doors block detection)
-
----
 ## 📄 Documentation
 
 Full game design document available in the `/Documment` folder of this repository.
